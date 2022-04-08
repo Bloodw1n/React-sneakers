@@ -2,7 +2,7 @@ import styles from "./Card.module.scss";
 import ContentLoader from "react-content-loader";
 import { AppContext } from "../../App";
 
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 
 const Card = ({
   id,
@@ -46,18 +46,19 @@ const Card = ({
         </ContentLoader>
       ) : (
         <>
-          <div className={styles.favorite} onClick={onClickFavorite}>
-            {onFavorite && (
+          {onFavorite && (
+            <div className={styles.favorite} onClick={onClickFavorite}>
               <img
                 src={
                   isFavorite
-                    ? "/img/Add_to_favourites_active.svg"
-                    : "/img/Add_to_favourites.svg"
+                    ? "img/Add_to_favourites_active.svg"
+                    : "img/Add_to_favourites.svg"
                 }
                 alt="Add_to_favourites"
               />
-            )}
-          </div>
+            </div>
+          )}
+
           <img src={imgUrl} alt="sneakers" width="100%" height={135} />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
@@ -70,7 +71,7 @@ const Card = ({
                 className={styles.plus}
                 onClick={onClickPlus}
                 src={
-                  isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"
+                  isItemAdded(id) ? "img/btn-checked.svg" : "img/btn-plus.svg"
                 }
                 alt="plus"
               />

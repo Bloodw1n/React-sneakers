@@ -10,7 +10,7 @@ import styles from "./Drawer.module.scss";
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Drawer = ({ onClose, onRemove, items = [], opened }) => {
-  const [isOrderCompeted, setIsOrderCompletes] = useState(false);
+  const [isOrderCompleted, setIsOrderCompletes] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { cartItems, setCartItems, totalPrice } = useCart();
@@ -47,7 +47,7 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
           <img
             onClick={onClose}
             className=" cu-p"
-            src="/img/cross.svg"
+            src="img/cross.svg"
             alt="remove"
           />
         </h2>
@@ -71,7 +71,7 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                   <img
                     onClick={() => onRemove(obj.id)}
                     className="removeBtn"
-                    src="/img/cross.svg"
+                    src="img/cross.svg"
                     alt="remove"
                   />
                 </div>
@@ -96,22 +96,22 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                 onClick={onClickOrder}
                 className="greenBtn"
               >
-                Оформить заказ <img src="/img/arrow.svg" alt="arrow" />
+                Оформить заказ <img src="img/arrow.svg" alt="arrow" />
               </button>
             </div>
           </div>
         ) : (
           <Info
-            title={isOrderCompeted ? "Заказ оформлен" : "Корзина пустая"}
+            title={isOrderCompleted ? "Заказ оформлен" : "Корзина пустая"}
             description={
-              isOrderCompeted
+              isOrderCompleted
                 ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
                 : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
             }
             image={
-              isOrderCompeted
-                ? "/img/order_is_processed.jpg"
-                : "/img/empty-cart.jpg"
+              isOrderCompleted
+                ? "img/order_is_processed.jpg"
+                : "img/empty-cart.jpg"
             }
           />
         )}

@@ -32,9 +32,9 @@ function App() {
       try {
         const [cartResponse, favoritesResponse, itemsResponse] =
           await Promise.all([
+            axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/items"),
             axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/cart"),
             axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/favorites"),
-            axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/items"),
           ]);
 
         setIsLoading(false);
@@ -155,7 +155,7 @@ function App() {
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
           <Route
-            path="/"
+            path=""
             element={
               <Home
                 items={items}
@@ -169,8 +169,8 @@ function App() {
               />
             }
           />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="orders" element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>
