@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import Card from "../componets/Card";
 import { AppContext } from "../App";
+import Card from "../componets/Card";
 
 const Orders = () => {
   const { onAddToCart, onAddToFavorite } = useContext(AppContext);

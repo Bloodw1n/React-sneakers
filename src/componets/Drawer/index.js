@@ -47,14 +47,14 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
           <img
             onClick={onClose}
             className=" cu-p"
-            src="img/cross.svg"
+            src="/img/cross.svg"
             alt="remove"
           />
         </h2>
 
         {items.length > 0 ? (
-          <div className="items d-flex flex-column flex ">
-            <div className="items flex">
+          <div className={`${styles.items} d-flex flex-column flex`}>
+            <div className={`${styles.items} flex`}>
               {items.map((obj) => (
                 <div
                   key={obj.id}
@@ -71,7 +71,7 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                   <img
                     onClick={() => onRemove(obj.id)}
                     className="removeBtn"
-                    src="img/cross.svg"
+                    src="/img/cross.svg"
                     alt="remove"
                   />
                 </div>
@@ -96,7 +96,7 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
                 onClick={onClickOrder}
                 className="greenBtn"
               >
-                Оформить заказ <img src="img/arrow.svg" alt="arrow" />
+                Оформить заказ <img src="/img/arrow.svg" alt="arrow" />
               </button>
             </div>
           </div>
@@ -110,8 +110,8 @@ const Drawer = ({ onClose, onRemove, items = [], opened }) => {
             }
             image={
               isOrderCompleted
-                ? "img/order_is_processed.jpg"
-                : "img/empty-cart.jpg"
+                ? "/img/order_is_processed.jpg"
+                : "/img/empty-cart.jpg"
             }
           />
         )}

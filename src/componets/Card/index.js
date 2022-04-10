@@ -51,8 +51,8 @@ const Card = ({
               <img
                 src={
                   isFavorite
-                    ? "img/Add_to_favourites_active.svg"
-                    : "img/Add_to_favourites.svg"
+                    ? "/img/Add_to_favourites_active.svg"
+                    : "/img/Add_to_favourites.svg"
                 }
                 alt="Add_to_favourites"
               />
@@ -60,6 +60,7 @@ const Card = ({
           )}
 
           <img src={imgUrl} alt="sneakers" width="100%" height={135} />
+
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
@@ -71,7 +72,7 @@ const Card = ({
                 className={styles.plus}
                 onClick={onClickPlus}
                 src={
-                  isItemAdded(id) ? "img/btn-checked.svg" : "img/btn-plus.svg"
+                  isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"
                 }
                 alt="plus"
               />

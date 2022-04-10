@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import axios from "axios";
+
 import Drawer from "./componets/Drawer";
 import Header from "./componets/Header";
 import Home from "./page/Home";
 import Favorites from "./page/Favorites";
-import { Route, Routes } from "react-router-dom";
 import Orders from "./page/Orders";
 
 export const AppContext = createContext({});
@@ -32,13 +33,12 @@ function App() {
       try {
         const [cartResponse, favoritesResponse, itemsResponse] =
           await Promise.all([
-            axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/items"),
             axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/cart"),
             axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/favorites"),
+            axios.get("https://623ca3ca7efb5abea684d5d3.mockapi.io/items"),
           ]);
 
         setIsLoading(false);
-
         setCartItems(cartResponse.data);
         setFavorites(favoritesResponse.data);
         setItems(itemsResponse.data);
@@ -64,7 +64,7 @@ function App() {
           `https://623ca3ca7efb5abea684d5d3.mockapi.io/cart/${findItem.id}`
         );
       } else {
-        setCartItems((prev) => [...prev, data]);
+        setCartItems((prev) => [...prev, obj]);
         const { data } = await axios.post(
           "https://623ca3ca7efb5abea684d5d3.mockapi.io/cart",
           obj
@@ -144,18 +144,16 @@ function App() {
       }}
     >
       <div className="wrapper clear">
-        <div>
-          <Drawer
-            items={cartItems}
-            onClose={() => setCartOpened(false)}
-            onRemove={onRemoveItem}
-            opened={cartOpened}
-          />
-        </div>
+        <Drawer
+          items={cartItems}
+          onClose={() => setCartOpened(false)}
+          onRemove={onRemoveItem}
+          opened={cartOpened}
+        />
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>
           <Route
-            path=""
+            path="/"
             element={
               <Home
                 items={items}
@@ -169,8 +167,8 @@ function App() {
               />
             }
           />
-          <Route path="favorites" element={<Favorites />} />
-          <Route path="orders" element={<Orders />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>

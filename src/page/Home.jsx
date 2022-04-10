@@ -1,4 +1,5 @@
 import React from "react";
+
 import Card from "../componets/Card";
 
 const Home = ({
@@ -13,6 +14,7 @@ const Home = ({
     const filtredItems = items.filter((item) =>
       item.title.toLowerCase().includes(searchValue)
     );
+
     return (isLoading ? [...Array(8)] : filtredItems).map((item, index) => (
       <Card
         key={index}
@@ -30,7 +32,7 @@ const Home = ({
           {searchValue ? `Поиск по запросу "${searchValue}"` : "Все кроссовки"}
         </h1>
         <div className="search-block d-flex">
-          <img src="img/search.svg" alt="Search" />
+          <img src="/img/search.svg" alt="Search" />
           <input
             onChange={onChangeSearchInput}
             value={searchValue}
@@ -38,7 +40,6 @@ const Home = ({
           />
         </div>
       </div>
-
       <div className="d-flex d-flex flex-wrap">{renderItems()}</div>
     </div>
   );
