@@ -15,4 +15,4 @@
 #### `cd React-sneakers`
 #### `npm install`
 #### `npm run build`
-#### `nppm run start`
+#### `npm run start`
