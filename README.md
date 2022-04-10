@@ -12,8 +12,7 @@
 
 Подробный порядок действий для запуска проекта:
 #### `git clone https://github.com/Bloodw1n/React-sneakers.git`
-#### `cd client`
-#### `npm init`
+#### `cd React-sneakers`
 #### `npm install`
 #### `npm run build`
 #### `nppm run start`
