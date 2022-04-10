@@ -18,16 +18,6 @@ function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  /**Query with use fetch */
-  // useEffect(() => {
-  //   fetch("https://623ca3ca7efb5abea684d5d3.mockapi.io/items")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((json) => setItems(json));
-  // }, []);
-
-  /**Query with use axios */
   useEffect(() => {
     const fetchData = async () => {
       try {
