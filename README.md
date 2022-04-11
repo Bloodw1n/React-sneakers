@@ -1,7 +1,7 @@
 # React-sneakers
-### Интернет-магазин кроссовок
+### Online store
 
-Стек:
+Stack:
 - ReactJS + хуки;
 - React Router;
 - Axios;
@@ -10,7 +10,7 @@
 - React Skeleton;
 - MockAPI.
 
-Подробный порядок действий для запуска проекта:
+Steps to start the project:
 #### `git clone https://github.com/Bloodw1n/React-sneakers.git`
 #### `cd React-sneakers`
 #### `npm install`
